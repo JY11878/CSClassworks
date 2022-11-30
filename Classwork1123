@@ -1,0 +1,105 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
+ */
+
+package com.mycompany.java_gui;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+/**
+ *
+ * @author Augustus
+ */
+public class Java_GUI implements ActionListener {
+    
+    private static JLabel userLabel;
+    private static JTextField userText;
+    private static JLabel passwordLabel;
+    private static JPasswordField passwordText;
+    private static JButton button;
+    private static JLabel success;
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame();
+        JPanel panel = new JPanel();
+        frame.setSize(350,200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       
+        frame.add(panel);
+        panel.setSize(350,200);
+        panel.setLayout(null);
+        
+        userLabel = new JLabel("User");
+        userLabel.setBounds(10,20,80,25);
+        panel.add(userLabel);
+        
+        userText = new JTextField(15);
+        userText.setBounds(100,20,165,25);
+        panel.add(userText);
+        
+        passwordLabel = new JLabel("Password");
+        passwordLabel.setBounds(10,50,80,25);
+        panel.add(passwordLabel);
+        
+        passwordText = new JPasswordField(15);
+        passwordText.setBounds(100,50,165,25);
+        panel.add(passwordText);
+        
+        button = new JButton("Login");
+        button.setBounds(10,100,80,25);
+        button.addActionListener(new Java_GUI());
+        panel.add(button);
+        
+        success = new JLabel("");
+        success.setBounds(10,130,300,25);
+        panel.add(success);
+        
+      
+      
+      
+      
+       frame.setVisible(true);
+        
+
+        
+        
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String user = userText.getText();
+        String password = passwordText.getText();
+       
+        
+        if(user.equals("Jason") && password.equals("jasonyao123")){
+            success.setText("Login successful!");
+            Java_GUI SuccessPage = new Java_GUI();
+            SuccessPage.ABC();
+           
+        }else{
+            success.setText("Wrong username or password!");
+        
+     }
+    }
+    private void ABC(){
+        String user = userText.getText();
+        String password = passwordText.getText();
+        
+        JFrame A = new JFrame();
+            A.setSize(350,200);
+            A.setVisible(true);
+            
+        JPanel B = new JPanel();
+            B.setSize(350,200);
+            A.add(B);
+        
+        JLabel C = new JLabel("Welcome," + user);
+            C.setBounds(20,30,70,30);
+            B.add(C);
+            
+            
+        
+    }
+}
