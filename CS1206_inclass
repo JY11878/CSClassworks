@@ -1,0 +1,45 @@
+
+package com.mycompany.interface1;
+import javax.swing.*;
+
+
+public class Interface1 {
+
+    public static void main(String[] args) {
+    JFrame frame = new JFrame();
+    JPanel panel = new JPanel();
+    frame.setSize(450,400);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
+    frame.add(panel);
+    panel.setSize(450,400);
+    panel.setLayout(null);
+    frame.setVisible(true);
+
+    
+    JLabel level = new JLabel("Level 1");
+    level.setBounds(10,10,50,25);
+    panel.add(level);
+    JLabel HP = new JLabel("Monster HP:120");
+    HP.setBounds(100,10,100,25);
+    panel.add(HP);
+    
+    JLabel PlayerHP = new JLabel("Player HP: 100");
+    PlayerHP.setBounds(10,100,120,25);
+    panel.add(PlayerHP);
+    JLabel Potions = new JLabel("Monster HP:120");
+    Potions.setBounds(330,100,100,25);
+    panel.add(Potions);
+    
+    JButton attack = new JButton("Attact!");
+    attack.setBounds(10,120,80,25);
+    panel.add(attack);
+    JButton healup = new JButton("Heal up!");
+    healup.setBounds(330,120,100,25);
+    panel.add(healup);
+    
+    JTextField message = new JTextField();
+    message.setBounds(10,155,425,150);
+    panel.add(message);
+     
+    }
+}
